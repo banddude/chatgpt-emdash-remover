@@ -1,13 +1,15 @@
 # ChatGPT Em Dash Remover
 
-A Chrome extension that automatically removes em dashes (—) from ChatGPT responses when copying text, replacing them with commas for better readability.
+A Chrome extension that automatically removes em dashes (—) from ChatGPT, replacing them with commas both in the conversation view and when copying text.
 
 ## Features
 
-- **Automatic Em Dash Removal**: Replaces all em dashes with commas when copying
-- **Clean Copy**: Removes "ChatGPT said:" prefix and other UI elements
+- **Live UI Updates**: Replaces em dashes with commas directly in the ChatGPT conversation view
+- **Clean Copying**: Automatically cleans text when using the copy button
+- **Removes UI Clutter**: Strips "ChatGPT said:" prefix and other UI elements when copying
 - **Visual Feedback**: Shows the same grey checkmark animation ChatGPT uses
-- **Seamless Integration**: Works transparently with ChatGPT's existing copy button
+- **Real-time Processing**: Works on new messages as they appear
+- **Seamless Integration**: Works transparently with ChatGPT's existing interface
 
 ## Installation
 
@@ -20,9 +22,16 @@ A Chrome extension that automatically removes em dashes (—) from ChatGPT respo
 
 ## How It Works
 
-The extension intercepts clicks on ChatGPT's copy buttons and:
-1. Extracts the message text
-2. Replaces all em dashes (—) with commas
+The extension works in two ways:
+
+**In the UI:**
+1. Monitors ChatGPT for new messages using MutationObserver
+2. Automatically replaces em dashes with commas in the conversation view
+3. Processes both existing and new messages in real-time
+
+**When copying:**
+1. Intercepts clicks on ChatGPT's copy buttons
+2. Extracts and cleans the message text
 3. Removes UI text like "ChatGPT said:"
 4. Copies the cleaned text to your clipboard
 5. Shows a checkmark animation for visual confirmation
@@ -34,7 +43,7 @@ The extension intercepts clicks on ChatGPT's copy buttons and:
 
 ## Why This Extension?
 
-ChatGPT often uses em dashes in its responses, which can make text harder to read when pasted into other applications. This extension automatically cleans up the text for you, making it more readable and professional.
+ChatGPT often uses em dashes in its responses, which can make text harder to read both in the interface and when pasted into other applications. This extension automatically cleans up the text in both places, making everything more readable and professional.
 
 ## License
 
